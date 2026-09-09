@@ -1,0 +1,37 @@
+{
+  "name": "aqua-maker-desktop",
+  "version": "1.1.0",
+  "description": "Aqua Maker — desktopowa aplikacja do tworzenia botów Discord na bloczkach",
+  "main": "main.js",
+  "author": "Aqua Studios",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux",
+    "build:mac": "electron-builder --mac"
+  },
+  "dependencies": {
+    "extract-zip": "^2.0.1"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "pl.aquastudios.aquamaker",
+    "productName": "Aqua Maker",
+    "icon": "icon.png",
+    "files": [
+      "main.js",
+      "preload.js",
+      "error.html",
+      "icon.png",
+      "package.json"
+    ],
+    "win": { "target": "nsis" },
+    "linux": { "target": "AppImage" },
+    "mac": { "target": "dmg" }
+  }
+}
